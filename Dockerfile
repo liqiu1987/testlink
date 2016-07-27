@@ -4,11 +4,11 @@ FROM adeo/testlink:latest
 MAINTAINER liqiu <liqiu1987@126.com>
 
 RUN rm -fr /app && mkdir -p /app
-# ADD testlink.sh /testlink.sh
+ADD testlink.sh /testlink.sh
 RUN chmod 755 /testlink.sh
-#ADD clean.sh /clean.sh
+ADD clean.sh /clean.sh
 RUN chmod 755 /clean.sh
-#ADD import_mysql_testlink_data.sh /import_mysql_testlink_data.sh
+ADD import_mysql_testlink_data.sh /import_mysql_testlink_data.sh
 RUN chmod 755 /import_mysql_testlink_data.sh
 
 COPY . /app
@@ -21,8 +21,8 @@ RUN mkdir -p /var/testlink/upload_area/ && \
 
 WORKDIR /app
 RUN rm -fr testlink && tar -zxvf testlink-1.9.14.tar.gz && rm -f testlink-1.9.14.tar.gz
-RUN mv testlink-1.9.14 testlink && rm -fr testlink-1.9.14
-RUN chmod 777 testlink/gui/templates_c
-RUN cp config_db.inc.php testlink/
+# RUN mv testlink-1.9.14/* . && rm -fr testlink-1.9.14
+RUN chmod 777 gui/templates_c
+# RUN cp config_db.inc.php testlink/
 EXPOSE 80 3306
 CMD ["/testlink.sh"]

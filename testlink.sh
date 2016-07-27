@@ -16,7 +16,7 @@ if [[ ! -d $VOLUME_HOME/mysql ]]; then
     /import_mysql_testlink_data.sh $MYSQL_PASS
     echo "=> Done!"
     echo "=> Set MySQL User password into testlink"
-    sed -i "s/testlink_pass/$MYSQL_PASS/g" /app/testlink/config_db.inc.php
+    sed -i "s/testlink_pass/$MYSQL_PASS/g" /app/config_db.inc.php
     echo "=> Done!"
     echo "=> Clean after install"
     /clean.sh

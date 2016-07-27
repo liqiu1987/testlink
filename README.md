@@ -1,6 +1,6 @@
 VERSION
 
-testlink 1.9.14
+testlink 1.9.14, mysql  Ver 14.14 Distrib 5.5.38, for debian-linux-gnu (x86_64)
 
 BUILD
 
